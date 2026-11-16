@@ -1,0 +1,14 @@
+{
+  "name": "livengage",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm --prefix Frontend install",
+    "build": "npm --prefix Frontend run build",
+    "start": "npm --prefix Frontend run start"
+  },
+  "dependencies": {
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
+  }
+}
