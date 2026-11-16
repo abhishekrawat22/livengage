@@ -2,3 +2,7 @@ node_modules/
 .next/
 .DS_Store
 .env*
+!.env.example
+backend/.tmp/
+backend/public/uploads/*
+!backend/public/uploads/.gitkeep

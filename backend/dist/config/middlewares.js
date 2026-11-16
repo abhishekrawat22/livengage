@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const config = [
+const config = ({ env }) => [
     'strapi::logger',
     'strapi::errors',
     'strapi::security',
@@ -8,10 +8,13 @@ const config = [
         name: 'strapi::cors',
         config: {
             headers: '*',
-            origin: [
+            // Override in production with CORS_ORIGINS="https://a.com,https://b.com"
+            origin: env.array('CORS_ORIGINS', [
+                'https://www.livengage.com',
+                'https://livengage.com',
                 'http://localhost:3000',
                 'http://127.0.0.1:3000',
-            ],
+            ]),
         },
     },
     'strapi::poweredBy',
